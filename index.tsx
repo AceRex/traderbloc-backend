@@ -1,7 +1,11 @@
 const express = require("express");
+// @ts-ignore
+const connectDB = require("./db/connect.tsx");
 const PORT = 8080;
 
 const app = express();
+
+connectDB();
 
 app.use(express.json());
 
