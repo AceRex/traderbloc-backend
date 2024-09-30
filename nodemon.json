@@ -2,6 +2,6 @@
     "watch": ["src"],
     "ext": "tsx,ts,json",
     "ignore": ["node_modules"],
-    "exec": "ts-node ./index.tsx"
+    "exec": "ts-node ./index.js"
   }
   
