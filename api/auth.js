@@ -1,16 +1,14 @@
 import express from "express";
 import { getUserProfile, registerUser } from "../controller/authController.js";
+import { invoiceSubmit } from "../controller/submitInvoice.js";
+import { upload } from "../utils/fileupload.js";
 
 const router = express.Router();
 
-// @route   POST /api/user
-// @desc    Create a user
-// @access  Public
 router.post("/create_user", registerUser);
 
-// @route   GET /api/user
-// @desc    Get a user
-// @access  Public
-router.get("/", getUserProfile);
+router.post("/invoice", upload.single("invoiceFile"), invoiceSubmit);
+
+router.get("/user",  getUserProfile);
 
 export default router;
